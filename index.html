@@ -7,7 +7,7 @@
 </head>
 <body>
     No. of present days:<br/>
-    <input type="text" id="pr"/>
+    <input type="text" id="pr"/><br/>
     Total no. of classes:<br/>
     <input type="text" id="to"/>
     <br/>
@@ -21,7 +21,16 @@
         console.log(x, y);
         let ans = parseInt((75*y - 100*x+24)/25);
         ans = parseInt(ans);
-        document.getElementById("ans").innerHTML = "Need to present in next "+ans+" classes";
+        let str1 = "";
+        if(ans>0){
+            str1 = "Need to present in next " + ans + " classes";
+        }else if(ans==0){
+            str1 = "cannot skip class";
+        }else{
+            ans = -ans;
+            str1 = "can bunk "+ans+" classes";
+        }
+        document.getElementById("ans").innerHTML = str1;
     }
 </script>
 </html>
