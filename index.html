@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendence Monitor</title>
+</head>
+<body>
+    <input type="text" id="pr"/>
+    <input type="text" id="to"/>
+    <button onclick="Cal()">submit</button>
+    <div id="ans"></div>
+</body>
+<script>
+    function Cal(){
+        let x = parseInt(document.getElementById("pr").value);
+        let y = parseInt(document.getElementById("to").value);
+        console.log(x, y);
+        let ans = parseInt((75*y - 100*x+24)/25);
+        ans = parseInt(ans);
+        document.getElementById("ans").innerHTML = "Need to present in next "+ans+" classes";
+    }
+</script>
+</html>
